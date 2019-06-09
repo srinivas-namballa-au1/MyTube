@@ -8,4 +8,12 @@ let reducer = combineReducers({
 
 let store = createStore(reducer);
 
-export {store};
+store.subscribe(() => {
+    console.log("Dispatched ===>", store.getState());
+});
+
+function stateMapper(state) {
+    return state;
+}
+
+export {store, stateMapper};
