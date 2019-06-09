@@ -4,6 +4,8 @@ import {Provider} from 'react-redux';
 import {store, stateMapper} from '../store/store.js';
 import Menu from './Menu.js';
 import Videos from './Videos.js';
+import Trending from './Trending.js';
+import Search from './Search.js';
 
 class App extends React.Component {
     render() {
@@ -16,10 +18,8 @@ class App extends React.Component {
                         </div>
 
                         <div className="col-md-9">
-                            <h1>MyTube - Trending Videos</h1>
-                            <hr />
-
-                            <Videos />
+                            <Trending />
+                            <Search />
                         </div>
                     </div>
                 </div>
