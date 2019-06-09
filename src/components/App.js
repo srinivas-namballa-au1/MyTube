@@ -1,5 +1,6 @@
 import React from 'react';
 import {Provider} from 'react-redux';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 
 import {store, stateMapper} from '../store/store.js';
 import Menu from './Menu.js';
@@ -11,18 +12,20 @@ class App extends React.Component {
     render() {
         return(
             <Provider store={store}>
-                <div className="container">
-                    <div className="row">
-                        <div className="col-md-3">
-                            <Menu />
-                        </div>
+                <Router>
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-md-3">
+                                <Menu />
+                            </div>
 
-                        <div className="col-md-9">
-                            <Trending />
-                            <Search />
+                            <div className="col-md-9">
+                                <Route path="/" exact={true} component={Trending} />
+                                <Route path="/search" component={Search} />
+                            </div>
                         </div>
                     </div>
-                </div>
+                </Router>
             </Provider>
         );
     }

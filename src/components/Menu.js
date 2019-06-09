@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 class Menu extends React.Component {
     render() {
@@ -6,11 +7,15 @@ class Menu extends React.Component {
             <div>
                 <h2>MyTube</h2>
                 <hr />
-                
+
                 <ul className="list-group">
                     <li className="list-group-item bg-dark text-white">Menu</li>
-                    <li className="list-group-item">Trending</li>
-                    <li className="list-group-item">Search</li>
+                    <li className="list-group-item">
+                        <Link to="/">Trending</Link>    
+                    </li>
+                    <li className="list-group-item">
+                        <Link to="/search">Search</Link>
+                    </li>
                 </ul>
             </div>
         );
