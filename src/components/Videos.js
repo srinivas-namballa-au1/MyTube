@@ -4,14 +4,7 @@ import {connect} from 'react-redux';
 import {store, stateMapper} from '../store/store.js';
 
 class VideosComponent extends React.Component {
-    componentDidMount() {
-        store.dispatch({
-            type: "FETCH_VIDEOS"
-        });
-    }
-
-    renderVideos() {
-        
+    renderVideos() {    
         return this.props.videos.map(v => {
             return(
                 <div key={v.id} className="col-md-4">
