@@ -24,11 +24,25 @@ class VideosComponent extends React.Component {
     }
 
     render() {
-        return(
-            <div className="row">
-                {this.renderVideos()}
-            </div>
-        );
+        if(this.props.isVideoLoading) {
+            return(
+                <div className="row">
+                    <div className="col-md-12">
+                        <div class="d-flex justify-content-center">
+                            <div class="spinner-border text-danger" role="status">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            );
+        } else {
+            return(
+                <div className="row">
+                    {this.renderVideos()}
+                </div>
+            );
+        }
     }
 }
 
