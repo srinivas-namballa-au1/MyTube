@@ -8,7 +8,7 @@ function videosReducer(videos = [], action) {
     }
     
     if(action.type == "FETCH_VIDEOS") {
-        fetchVideos(store, action.videoType);
+        fetchVideos(store, action);
         return videos;
     }
 

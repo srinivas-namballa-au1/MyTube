@@ -29,7 +29,11 @@ class SearchComponent extends React.Component {
     }
 
     buttonClicked() {
-        console.log(this.state.query);
+        this.props.dispatch({
+            type: "FETCH_VIDEOS",
+            videoType: "search",
+            query: this.state.query
+        });
     }
 
     render() {
@@ -45,6 +49,8 @@ class SearchComponent extends React.Component {
 
                     <button onClick={this.buttonClicked} className="btn btn-secondary btn-lg">Search</button>
                 </div>
+
+                <p></p>
 
                 <Videos />
             </div>
