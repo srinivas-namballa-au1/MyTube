@@ -16,7 +16,7 @@ class SearchComponent extends React.Component {
         this.buttonClicked = this.buttonClicked.bind(this);
     }
 
-    componentDidMount() {
+    componentWillMount() {
         this.props.dispatch({
             type: "CLEAR_VIDEOS"
         });

@@ -12,6 +12,12 @@ class TrendingComponent extends React.Component {
         });
     }
 
+    componentWillMount() {
+        this.props.dispatch({
+            type: "CLEAR_VIDEOS"
+        });
+    }
+
     render() {
         return(
             <div>
