@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 
 import {store, stateMapper} from '../store/store.js';
 
@@ -14,9 +15,10 @@ class VideosComponent extends React.Component {
 
             return(
                 <div key={v.etag} className="col-md-4">
-                    <a target="_blank" href={`https://youtube.com/watch?v=${videoId}`}>
+                    <Link to={`/player/${videoId}`}>
                         <img className="img-fluid" src={v.snippet.thumbnails.high.url} alt={v.snippet.title} />
-                    </a>
+                    </Link>
+
                     <small> {v.snippet.title} by <em>{v.snippet.channelTitle}</em> </small>
                 </div>
             );
@@ -29,7 +31,7 @@ class VideosComponent extends React.Component {
                 <div className="row">
                     <div className="col-md-12">
                         <div className="d-flex justify-content-center">
-                            <div className="spinner-border text-danger" role="status">
+                            <div className="spinner-border text-dark" role="status">
                                 <span className="sr-only">Loading...</span>
                             </div>
                         </div>
