@@ -10,11 +10,19 @@ class VideoPlayerComponent extends React.Component {
         });
     }
 
+    renderTitle() {
+        if(!this.props.currentPlayerVideo.snippet) {
+            return "Loading...";
+        } else {
+            return this.props.currentPlayerVideo.snippet.title;
+        }
+    }
+
     render() {
         return(
             <div>
                 <h2 className="text-dark">
-                    {this.props.match.params.videoId}
+                    {this.renderTitle()}
                 </h2>
 
                 <div className="embed-responsive embed-responsive-16by9">
