@@ -2,6 +2,8 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {store, stateMapper} from '../store/store.js';
 
+import Comments from './Comments.js';
+
 class VideoPlayerComponent extends React.Component {
     constructor(props) {
         super(props);
@@ -88,6 +90,12 @@ class VideoPlayerComponent extends React.Component {
                     <div className="col-md-8">
                         {this.renderDescription()}
                     </div>
+                </div>
+
+                <div className="row">
+                    <diV className="col-md-8">
+                        <Comments videoId={this.props.match.params.videoId}/>
+                    </diV>
                 </div>
             </div>
             

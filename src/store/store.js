@@ -3,11 +3,13 @@ import {createStore, combineReducers} from "redux";
 import videosReducer from "./reducers/videosReducer.js";
 import isVideosLoadingReducer from "./reducers/isVideosLoadingReducer.js";
 import currentPlayerVideoReducer from "./reducers/currentPlayerVideoReducer.js";
+import currentVideoCommentsReducer from "./reducers/currentVideoCommentsReducer.js";
 
 let reducer = combineReducers({
     videos: videosReducer,
     isVideoLoading: isVideosLoadingReducer,
-    currentPlayerVideo: currentPlayerVideoReducer
+    currentPlayerVideo: currentPlayerVideoReducer,
+    currentVideoComments: currentVideoCommentsReducer
 });
 
 let store = createStore(reducer);
