@@ -65,7 +65,7 @@ function fetchVideoComments(store, action) {
     .then(function(data) {
         store.dispatch({
             type: "VIDEO_COMMENTS_LOADED",
-            videoData: data.items
+            comments: data.items
         });
     })
     .catch(function(err) {

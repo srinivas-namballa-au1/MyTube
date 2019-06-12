@@ -74,10 +74,10 @@ class VideoPlayerComponent extends React.Component {
                     <div className="col-md-8">
                         <h2>
                             Views: {this.props.currentPlayerVideo.statistics && this.props.currentPlayerVideo.statistics.viewCount} |
-                            <span class="oi oi-thumb-up">
+                            <span className="oi oi-thumb-up">
                                 {this.props.currentPlayerVideo.statistics && this.props.currentPlayerVideo.statistics.likeCount}    
                             </span> |
-                            <span class="oi oi-thumb-down">
+                            <span className="oi oi-thumb-down">
                                 {this.props.currentPlayerVideo.statistics && this.props.currentPlayerVideo.statistics.dislikeCount}
                             </span>
                         </h2>
@@ -93,9 +93,13 @@ class VideoPlayerComponent extends React.Component {
                 </div>
 
                 <div className="row">
-                    <diV className="col-md-8">
+                    <div className="col-md-8">
+                        <h2>
+                            {this.props.currentPlayerVideo.statistics && this.props.currentPlayerVideo.statistics.commentCount} Comments
+                        </h2>
+                        <hr />
                         <Comments videoId={this.props.match.params.videoId}/>
-                    </diV>
+                    </div>
                 </div>
             </div>
             

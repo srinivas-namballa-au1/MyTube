@@ -13,7 +13,17 @@ class CommentsComponent extends React.Component {
 
     render() {
         return(
-            "Loading Comments..."
+            this.props.currentVideoComments.map( c => {
+                return(
+                    <p key={c.id}>
+                        <img src={c.snippet.topLevelComment.snippet.authorProfileImageUrl} />
+                        <strong>
+                            {c.snippet.topLevelComment.snippet.authorDisplayName}
+                        </strong> <br />
+                        {c.snippet.topLevelComment.snippet.textOriginal}
+                    </p>
+                ) 
+            } )
         );
     }
 }
