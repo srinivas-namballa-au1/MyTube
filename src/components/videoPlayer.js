@@ -3,6 +3,16 @@ import {connect} from 'react-redux';
 import {store, stateMapper} from '../store/store.js';
 
 class VideoPlayerComponent extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            showMoreClicked: false
+        };
+
+        this.showMoreClicked = this.showMoreClicked.bind(this);
+    }
+
     componentDidMount() {
         this.props.dispatch({
             type: "FETCH_VIDEO_DATA",
@@ -16,11 +26,34 @@ class VideoPlayerComponent extends React.Component {
         });
     }
 
+    showMoreClicked() {
+        this.setState({
+            showMoreClicked: true
+        });
+    }
+
     renderTitle() {
         if(!this.props.currentPlayerVideo.snippet) {
             return "Loading...";
         } else {
             return this.props.currentPlayerVideo.snippet.title;
+        }
+    }
+
+    renderDescription() {
+        if(this.state.showMoreClicked) {
+            return(
+                <p>
+                    {this.props.currentPlayerVideo.snippet && this.props.currentPlayerVideo.snippet.description}
+                </p>
+            );
+        } else {
+            return(
+                <p>
+                    {this.props.currentPlayerVideo.snippet && this.props.currentPlayerVideo.snippet.shortDescription}
+                    <button onClick={this.showMoreClicked} className="btn btn-sm btn-secondary bg-dark">Show More</button>
+                </p>
+            );
         }
     }
 
@@ -46,12 +79,14 @@ class VideoPlayerComponent extends React.Component {
                                 {this.props.currentPlayerVideo.statistics && this.props.currentPlayerVideo.statistics.dislikeCount}
                             </span>
                         </h2>
+
+                        <hr />
                     </div>
                 </div>
 
                 <div className="row">
                     <div className="col-md-8">
-                        {this.props.currentPlayerVideo.snippet && this.props.currentPlayerVideo.snippet.description}
+                        {this.renderDescription()}
                     </div>
                 </div>
             </div>
