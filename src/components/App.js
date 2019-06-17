@@ -13,21 +13,19 @@ class App extends React.Component {
     render() {
         return(
             <Provider store={store}>
-                <Router>
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-md-3">
-                                <Menu />
-                            </div>
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-3">
+                            <Menu />
+                        </div>
 
-                            <div className="col-md-9">
-                                <Route path="/app" exact="true" component={Trending} />
-                                <Route path="/app/search" component={Search} />
-                                <Route path="/app/player/:videoId" component={VideoPlayer} />
-                            </div>
+                        <div className="col-md-9">
+                            <Route path="/app" exact="true" component={Trending} />
+                            <Route path="/app/search" component={Search} />
+                            <Route path="/app/player/:videoId" component={VideoPlayer} />
                         </div>
                     </div>
-                </Router>
+                </div>
             </Provider>
         );
     }
