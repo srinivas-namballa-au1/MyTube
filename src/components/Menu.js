@@ -18,6 +18,9 @@ class Menu extends React.Component {
                     <li className="list-group-item">
                         <Link to="/app/search">Search</Link>
                     </li>
+                    <li className="list-group-item">
+                        <Link to="/app/profile">Profile</Link>
+                    </li>
                 </ul>
             </div>
         );
