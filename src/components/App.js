@@ -9,6 +9,7 @@ import Trending from './Trending.js';
 import Search from './Search.js';
 import VideoPlayer from './videoPlayer.js';
 import Profile from './Profile.js';
+import Logout from './Logout.js';
 
 class App extends React.Component {
     render() {
@@ -21,10 +22,11 @@ class App extends React.Component {
                         </div>
 
                         <div className="col-md-9">
-                            <Route path="/app" exact="true" component={Trending} />
+                            <Route path="/app" component={Trending} />
                             <Route path="/app/search" component={Search} />
                             <Route path="/app/player/:videoId" component={VideoPlayer} />
                             <Route path="/app/profile" component={Profile} />
+                            <Route path="/app/logout" component={Logout} />
                         </div>
                     </div>
                 </div>
