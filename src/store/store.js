@@ -20,10 +20,6 @@ store.subscribe(() => {
     console.log("Dispatched ===>", store.getState());
 });
 
-store.dispatch({
-    type: "FETCH_PLAYLISTS"
-})
-
 function stateMapper(state) {
     return state;
 }
